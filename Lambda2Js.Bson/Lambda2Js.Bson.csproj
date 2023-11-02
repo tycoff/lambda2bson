@@ -1,14 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Title>lambda2js.Bson (ExpressionTree to Bson)</Title>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageProjectUrl>https://github.com/tycoff/lambda2js.bson</PackageProjectUrl>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<RepositoryType>git</RepositoryType>
+		<Authors>tycoff</Authors>
+		<RepositoryUrl>https://github.com/tcoff/lambda2js.bson</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Lambda2Js.Signed" Version="3.1.4" />
-		<PackageReference Include="MongoDB.Bson" Version="2.9.3" />
+		<PackageReference Include="MongoDB.Bson" Version="2.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)" />
 	</ItemGroup>
 
 </Project>

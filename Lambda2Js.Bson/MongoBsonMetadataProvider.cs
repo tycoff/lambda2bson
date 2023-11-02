@@ -1,16 +1,19 @@
-using System.Diagnostics.CodeAnalysis;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
+using System.Threading;
 
 namespace Lambda2Js.Bson
 {
     /// <summary>
     /// Provides metadata about the objects that are going to be converted to JavaScript in some way.
     /// </summary>
-    public class MongoBsonMetadataProvider : JavascriptMetadataProvider
+    internal class MongoBsonMetadataProvider : JavascriptMetadataProvider
     {
         private readonly object locker = new object();
 
-        private IJavascriptMemberMetadata GetMemberMetadataNoCache([NotNull] MemberInfo memberInfo)
+        private IJavascriptMemberMetadata GetMemberMetadataNoCache(MemberInfo memberInfo)
         {
             if (memberInfo == null)
                 throw new ArgumentNullException(nameof(memberInfo));
@@ -32,7 +35,7 @@ namespace Lambda2Js.Bson
         private Dictionary<MemberInfo, IJavascriptMemberMetadata> cache
             = new Dictionary<MemberInfo, IJavascriptMemberMetadata>();
 
-        private IJavascriptMemberMetadata GetMemberMetadataWithCache([NotNull] MemberInfo memberInfo)
+        private IJavascriptMemberMetadata GetMemberMetadataWithCache(MemberInfo memberInfo)
         {
             IJavascriptMemberMetadata value;
             if (this.cache.TryGetValue(memberInfo, out value))
@@ -69,7 +72,7 @@ namespace Lambda2Js.Bson
         /// </summary>
         /// <param name="memberInfo"></param>
         /// <returns></returns>
-        public override IJavascriptMemberMetadata GetMemberMetadata([NotNull] MemberInfo memberInfo)
+        public override IJavascriptMemberMetadata GetMemberMetadata(MemberInfo memberInfo)
         {
             return this.GetMemberMetadata(memberInfo, this.UseCache);
         }
@@ -86,7 +89,7 @@ namespace Lambda2Js.Bson
         /// <param name="memberInfo"></param>
         /// <param name="useCache"></param>
         /// <returns></returns>
-        public IJavascriptMemberMetadata GetMemberMetadata([NotNull] MemberInfo memberInfo, bool useCache)
+        public IJavascriptMemberMetadata GetMemberMetadata(MemberInfo memberInfo, bool useCache)
         {
             if (useCache)
                 return this.GetMemberMetadataWithCache(memberInfo);

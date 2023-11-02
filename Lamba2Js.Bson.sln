@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lambda2Js.Bson", "Lambda2Js
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lambda2Js.Bson.Tests", "Lambda2Js.Bson.Tests\Lambda2Js.Bson.Tests.csproj", "{20DC6614-072E-462F-97E1-D2E8F1572F5D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lambda2Js", "Lambda2Js\Lambda2Js.csproj", "{071414B7-2DD6-43DA-9DCA-EC61BB6C2051}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{20DC6614-072E-462F-97E1-D2E8F1572F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20DC6614-072E-462F-97E1-D2E8F1572F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20DC6614-072E-462F-97E1-D2E8F1572F5D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{071414B7-2DD6-43DA-9DCA-EC61BB6C2051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{071414B7-2DD6-43DA-9DCA-EC61BB6C2051}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{071414B7-2DD6-43DA-9DCA-EC61BB6C2051}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{071414B7-2DD6-43DA-9DCA-EC61BB6C2051}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
